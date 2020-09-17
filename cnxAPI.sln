@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cnxAPI", "cnxAPI\cnxAPI.csproj", "{C3BECF66-6B13-4DD4-8902-2F13C41A2691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cnxAPI.DAL", "cnxAPI.DAL\cnxAPI.DAL.csproj", "{A4D69314-01AA-4F80-A969-4C95CF4F709B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3BECF66-6B13-4DD4-8902-2F13C41A2691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BECF66-6B13-4DD4-8902-2F13C41A2691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3BECF66-6B13-4DD4-8902-2F13C41A2691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3BECF66-6B13-4DD4-8902-2F13C41A2691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D69314-01AA-4F80-A969-4C95CF4F709B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D69314-01AA-4F80-A969-4C95CF4F709B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D69314-01AA-4F80-A969-4C95CF4F709B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D69314-01AA-4F80-A969-4C95CF4F709B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
