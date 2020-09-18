@@ -11,7 +11,7 @@ namespace cnxAPI.DAL.BusinessLogic
     public class MembersBL
     {
         private List<Member> _members;
-        //private XmlSerializer serializer;
+        
         
         public MembersBL()
         {
@@ -20,7 +20,7 @@ namespace cnxAPI.DAL.BusinessLogic
 
         public void Add(Member item)
         {
-            //_members.Add(item);
+            //Tranforma un objeto a formato XML
             XmlSerializer serializer = new XmlSerializer(item.GetType());
             var memoryStream = new MemoryStream();
             var strWriter = new StringWriterUtf8();
@@ -33,6 +33,7 @@ namespace cnxAPI.DAL.BusinessLogic
                       System.Text.Encoding.UTF8.GetBytes(strXML));
                 Session session = new Session("localhost", 1984, "admin", "admin");
                 session.Execute("check biblioteca");
+                //Agrega un miembro a la biblioteca
                 session.Add("members", ms);
                 session.Close();
             }
@@ -49,14 +50,17 @@ namespace cnxAPI.DAL.BusinessLogic
             {
                 Session session = new Session("localhost", 1984, "admin", "admin");
                 session.Execute("check biblioteca");
+                //Consulta miembros de la biblioteca por id
                 string _query = " //member[id="+ id + "]";
                 Query query = session.Query(_query);
 
                 while (query.More())
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(Member));
-                    var strWriter = new StringReader(query.Next());
+                    var strXML = query.Next();
+                    var strWriter = new StringReader(strXML);
                     object _item = serializer.Deserialize(strWriter);
+                    ((Member)_item).XMLFormat = strXML;
                     retvalue = (Member)_item;
                 }
                 session.Close();
@@ -77,14 +81,17 @@ namespace cnxAPI.DAL.BusinessLogic
             {
                 Session session = new Session("localhost", 1984, "admin", "admin");
                 session.Execute("check biblioteca");
+                //Consulta todos los miembros de la biblioteca
                 string _query = " //member ";
                 Query query = session.Query(_query);
                 
                 while (query.More())
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(Member));
-                    var strWriter = new StringReader(query.Next());
+                    var strXML = query.Next();
+                    var strWriter = new StringReader(strXML);
                     object _item = serializer.Deserialize(strWriter);
+                    ((Member)_item).XMLFormat = strXML;
                     retvalue.Add((Member)_item);
                 }
                 session.Close();

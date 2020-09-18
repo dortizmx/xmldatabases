@@ -58,8 +58,6 @@ namespace cnxAPI.Controllers
             {
                 if (item.TransactionType.ToUpper() == "LOAN" && item.Id.Trim() == "0")
                     item.Id = cnxAPI.DAL.KeyCreator.getKey();
-
-
                 item.LoanDate = DateTime.Now;
                 loanbl.Add(item);
 

@@ -11,10 +11,14 @@ namespace cnxAPI.DAL.Domain
         public string FirstName { get; set; }
         [XmlElement(ElementName = "lastname")]
         public string LastName { get; set; }
+        [XmlElement(ElementName ="address")]
+        public string Address { get; set; }
         [XmlElement(ElementName ="suscriptiondate")]
         public DateTime SuscriptionDate { get; set; }
         [XmlElement(ElementName = "status")]
         public string Status { get; set; }
+
+        public string XMLFormat { get; set; }
        
     }
 }

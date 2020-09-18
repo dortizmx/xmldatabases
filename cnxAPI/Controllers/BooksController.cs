@@ -34,6 +34,23 @@ namespace cnxAPI.Controllers
 
         }
 
+        [HttpGet("{id}")]
+        [Produces(typeof(Books))]
+        public ActionResult<Books> get(int id)
+        {
+            try
+            {
+                LibrosBL libr = new LibrosBL();
+                var retvalue = libr.getLibros(id);
+                return Ok(retvalue);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+
+        }
+
         [HttpPost]
         [Produces(typeof(Books))]
         public ActionResult Post(Books item)

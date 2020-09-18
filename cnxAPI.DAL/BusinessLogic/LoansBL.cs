@@ -14,7 +14,7 @@ namespace cnxAPI.DAL.BusinessLogic
 
         public void Add(Loans item)
         {
-            item.Id = KeyCreator.getKey();
+            //item.Id = KeyCreator.getKey();
             //_members.Add(item);
             XmlSerializer serializer = new XmlSerializer(item.GetType());
             var memoryStream = new MemoryStream();
@@ -44,14 +44,16 @@ namespace cnxAPI.DAL.BusinessLogic
             {
                 Session session = new Session("localhost", 1984, "admin", "admin");
                 session.Execute("check biblioteca");
-                string _query = " //loan[id=" + id + "]";
+                string _query = " //loan[id='" + id + "']";
                 Query query = session.Query(_query);
 
                 while (query.More())
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(Loans));
-                    var strWriter = new StringReader(query.Next());
+                    var strXML = query.Next();
+                    var strWriter = new StringReader(strXML);
                     object _item = serializer.Deserialize(strWriter);
+                    ((Loans)_item).XMLFormat = strXML;
                     retvalue = (Loans)_item;
                 }
                 session.Close();
@@ -104,8 +106,10 @@ namespace cnxAPI.DAL.BusinessLogic
                 while (query.More())
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(Loans));
-                    var strWriter = new StringReader(query.Next());
+                    var strXML = query.Next();
+                    var strWriter = new StringReader(strXML);
                     object _item = serializer.Deserialize(strWriter);
+                    ((Loans)_item).XMLFormat = strXML;
                     retvalue.Add((Loans)_item);
                 }
                 session.Close();

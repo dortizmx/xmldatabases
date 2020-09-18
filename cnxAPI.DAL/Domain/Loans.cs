@@ -20,5 +20,7 @@ namespace cnxAPI.DAL.Domain
         public int LoanDays { get; set; }
         [XmlElement(ElementName = "transactiontype")]
         public string TransactionType { get; set; }
+
+        public string XMLFormat { get; set; }
     }
 }

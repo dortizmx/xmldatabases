@@ -8,15 +8,15 @@ namespace cnxAPI.DAL.Domain
     {
         [XmlElement(ElementName = "id")]
         public int Id { get; set; }
-        [XmlElement(ElementName = "isbn")]
-        public string ISBN { get; set; }
         [XmlElement(ElementName = "title")]
         public string Title { get; set; }
-        [XmlElement(ElementName = "year")]
-        public string Year { get; set; }
+        [XmlElement(ElementName = "publishing")]
+        public string Publishing { get; set; }
         [XmlElement(ElementName = "author")]
         public string Author { get; set; }
         [XmlElement(ElementName = "copies")]
         public string Copies { get; set; }
+
+        public string XMLFormat { get; set; }
     }
 }
