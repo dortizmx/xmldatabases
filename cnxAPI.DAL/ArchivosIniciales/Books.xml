@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+   <book>
+      <id>1</id>
+      <title>EL PRINCIPITO</title>
+      <publishing>OCEANO</publishing>
+      <author>ANTOINE DE SAINT-EXUPERY</author>
+      <copies>244</copies>
+   </book>
+   <book>
+      <id>2</id>
+      <title>LA PROMESA DEL TEMPLARIO</title>
+      <publishing>OCEANO</publishing>
+      <author>Elizabeth Chadwick</author>
+      <copies>123</copies>
+   </book>
+   <book>
+      <id>3</id>
+      <title>AHORA TE TOCA SER FELIZ</title>
+      <publishing>OCEANO</publishing>
+      <author>Curro Cañete</author>
+      <copies>20</copies>
+   </book>
+   <book>
+      <id>4</id>
+      <title>PALABRA DE JUDIO</title>
+      <publishing>OCEANO</publishing>
+      <author>Martí Gironell</author>
+      <copies>24</copies>
+   </book>
+   <book>
+      <id>5</id>
+      <title>LA LIBRERA Y EL LADRON</title>
+      <publishing>OCEANO</publishing>
+      <author>Oliver Espinosa</author>
+      <copies>102</copies>
+   </book>
+</books>

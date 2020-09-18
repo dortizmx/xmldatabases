@@ -1,0 +1,37 @@
+[
+   {
+      "id": 1,
+      "title": "EL PRINCIPITO",
+      "publishing": "OCEANO",
+      "author": "ANTOINE DE SAINT-EXUPERY",
+      "copies": "244"
+   },
+   {
+      "id": 2,
+      "title": "LA PROMESA DEL TEMPLARIO",
+      "publishing": "OCEANO",
+      "author": "Elizabeth Chadwick",
+      "copies": "123"
+   },
+   {
+      "id": 3,
+      "title": "AHORA TE TOCA SER FELIZ",
+      "publishing": "OCEANO",
+      "author": "Curro Cañete",
+      "copies": "20"
+   },
+   {
+      "id": 4,
+      "title": "PALABRA DE JUDIO",
+      "publishing": "OCEANO",
+      "author": "Martí Gironell",
+      "copies": "24"
+   },
+   {
+      "id": 5,
+      "title": "LA LIBRERA Y EL LADRON",
+      "publishing": "OCEANO",
+      "author": "Oliver Espinosa",
+      "copies": "102"
+   }
+]

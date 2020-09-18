@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<members>
+  <member>
+    <id>1</id>
+    <firstname>Mariana</firstname>
+    <lastname>Valdes</lastname>
+    <address>Estado de Mexico</address>
+    <suscriptiondate>2020-09-17</suscriptiondate>
+    <status>A</status>
+  </member>
+  <member>
+    <id>2</id>
+    <firstname>Liliana</firstname>
+    <lastname>Flores</lastname>
+    <address>CDMX</address>
+    <suscriptiondate>2020-09-17</suscriptiondate>
+    <status>A</status>
+  </member>
+  <member>
+    <id>3</id>
+    <firstname>Mario Alberto</firstname>
+    <lastname>Carrillo</lastname>
+    <address>Guadalajara</address>
+    <suscriptiondate>2020-09-17</suscriptiondate>
+    <status>A</status>
+  </member>
+  <member>
+    <id>4</id>
+    <firstname>Carlos</firstname>
+    <lastname>Gonzalez</lastname>
+    <address>Estado de Mexico</address>
+    <suscriptiondate>2020-09-17</suscriptiondate>
+    <status>A</status>
+  </member>
+  <member>
+    <id>5</id>
+    <firstname>David</firstname>
+    <lastname>Ortiz</lastname>
+    <address>CDMX</address>
+    <suscriptiondate>2020-09-17</suscriptiondate>
+    <status>A</status>
+  </member>
+</members>

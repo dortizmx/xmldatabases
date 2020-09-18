@@ -1,0 +1,42 @@
+[
+   {
+      "id": 1,
+      "firstname": "Mariana",
+      "lastname": "Valdes",
+      "address": "Estado de Mexico",
+      "suscriptiondate": "2020-09-17",
+      "status": "A"
+   },
+   {
+      "id": 2,
+      "firstname": "Liliana",
+      "lastname": "Flores",
+      "address": "CDMX",
+      "suscriptiondate": "2020-09-17",
+      "status": "A"
+   },
+   {
+      "id": 3,
+      "firstname": "Mario Alberto",
+      "lastname": "Carrillo",
+      "address": "Guadalajara",
+      "suscriptiondate": "2020-09-17",
+      "status": "A"
+   },
+   {
+      "id": 4,
+      "firstname": "Carlos",
+      "lastname": "Gonzalez",
+      "address": "Estado de Mexico",
+      "suscriptiondate": "2020-09-17",
+      "status": "A"
+   },
+   {
+      "id": 5,
+      "firstname": "David",
+      "lastname": "Ortiz",
+      "address": "CDMX",
+      "suscriptiondate": "2020-09-17",
+      "status": "A"
+   }
+]
