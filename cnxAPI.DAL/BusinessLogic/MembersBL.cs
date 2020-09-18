@@ -31,7 +31,9 @@ namespace cnxAPI.DAL.BusinessLogic
             {
                 MemoryStream ms = new MemoryStream(
                       System.Text.Encoding.UTF8.GetBytes(strXML));
+                //conexión a la base de datos
                 Session session = new Session("localhost", 1984, "admin", "admin");
+                //abre base de datos
                 session.Execute("check biblioteca");
                 //Agrega un miembro a la biblioteca
                 session.Add("members", ms);
@@ -49,6 +51,7 @@ namespace cnxAPI.DAL.BusinessLogic
             try
             {
                 Session session = new Session("localhost", 1984, "admin", "admin");
+                //abre base de datos
                 session.Execute("check biblioteca");
                 //Consulta miembros de la biblioteca por id
                 string _query = " //member[id="+ id + "]";
@@ -80,6 +83,7 @@ namespace cnxAPI.DAL.BusinessLogic
             try
             {
                 Session session = new Session("localhost", 1984, "admin", "admin");
+                //abre base de datos
                 session.Execute("check biblioteca");
                 //Consulta todos los miembros de la biblioteca
                 string _query = " //member ";

@@ -14,8 +14,6 @@ namespace cnxAPI.DAL.BusinessLogic
 
         public void Add(Loans item)
         {
-            //item.Id = KeyCreator.getKey();
-            //_members.Add(item);
             XmlSerializer serializer = new XmlSerializer(item.GetType());
             var memoryStream = new MemoryStream();
             var strWriter = new StringWriterUtf8();
@@ -26,8 +24,11 @@ namespace cnxAPI.DAL.BusinessLogic
             {
                 MemoryStream ms = new MemoryStream(
                       System.Text.Encoding.UTF8.GetBytes(strXML));
+                //conexión a la base de datos
                 Session session = new Session("localhost", 1984, "admin", "admin");
+                //abre base de datos
                 session.Execute("check biblioteca");
+                //Agrega un prestamo/devolución de libro
                 session.Add("loan", ms);
                 session.Close();
             }
@@ -42,8 +43,11 @@ namespace cnxAPI.DAL.BusinessLogic
             Loans retvalue = new Loans();
             try
             {
+                //conexión a la base de datos
                 Session session = new Session("localhost", 1984, "admin", "admin");
+                //abre base de datos
                 session.Execute("check biblioteca");
+                //Consulta a la base de datos
                 string _query = " //loan[id='" + id + "']";
                 Query query = session.Query(_query);
 
@@ -70,8 +74,11 @@ namespace cnxAPI.DAL.BusinessLogic
             Loans retvalue = new Loans();
             try
             {
+                //conexión a la base de datos
                 Session session = new Session("localhost", 1984, "admin", "admin");
+                //abre base de datos
                 session.Execute("check biblioteca");
+                //Consulta a la base de datos
                 string _query = " //loan[memberid=" + memberid + ":bookid="+ bookid + "]";
                 Query query = session.Query(_query);
 
@@ -98,8 +105,11 @@ namespace cnxAPI.DAL.BusinessLogic
             List<Loans> retvalue = new List<Loans>();
             try
             {
+                //conexión a la base de datos
                 Session session = new Session("localhost", 1984, "admin", "admin");
+                //abre base de datos
                 session.Execute("check biblioteca");
+                //Consulta a la base de datos
                 string _query = " //loan ";
                 Query query = session.Query(_query);
 

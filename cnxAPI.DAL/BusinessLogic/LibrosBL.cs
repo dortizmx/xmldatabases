@@ -21,7 +21,6 @@ namespace cnxAPI.DAL.BusinessLogic
 
         public void Add(Books item)
         {
-            //_members.Add(item);
             XmlSerializer serializer = new XmlSerializer(item.GetType());
             var memoryStream = new MemoryStream();
             var strWriter = new StringWriterUtf8();
@@ -32,8 +31,11 @@ namespace cnxAPI.DAL.BusinessLogic
             {
                 MemoryStream ms = new MemoryStream(
                       System.Text.Encoding.UTF8.GetBytes(strXML));
+                //conexión a la base de datos
                 Session session = new Session("localhost", 1984, "admin", "admin");
+                //abre base de datos
                 session.Execute("check biblioteca");
+                //Agrega un miembro a la biblioteca
                 session.Add("book", ms);
                 session.Close();
             }
@@ -48,8 +50,11 @@ namespace cnxAPI.DAL.BusinessLogic
             List<Books> retvalue = new List<Books>();
             try
             {
+                //conexión a la base de datos
                 Session session = new Session("localhost", 1984, "admin", "admin");
+                //abre base de datos
                 session.Execute("check biblioteca");
+                //Consulta a la base de datos
                 string _query = " //book ";
                 Query query = session.Query(_query);
 
@@ -58,6 +63,7 @@ namespace cnxAPI.DAL.BusinessLogic
                     XmlSerializer serializer = new XmlSerializer(typeof(Books));
                     var strXML = query.Next();
                     var strWriter = new StringReader(strXML);
+                    //Deserealiza xml a objeto
                     object _item = serializer.Deserialize(strWriter);
                     ((Books)_item).XMLFormat = strXML;
                     retvalue.Add((Books)_item);
@@ -77,7 +83,9 @@ namespace cnxAPI.DAL.BusinessLogic
             Books retvalue = new Books();
             try
             {
+                //conexión a la base de datos
                 Session session = new Session("localhost", 1984, "admin", "admin");
+                //abre base de datos
                 session.Execute("check biblioteca");
                 string _query = " //book[id=" + id + "]";
                 Query query = session.Query(_query);
@@ -87,6 +95,7 @@ namespace cnxAPI.DAL.BusinessLogic
                     XmlSerializer serializer = new XmlSerializer(typeof(Books));
                     var strXML = query.Next();
                     var strWriter = new StringReader(strXML);
+                    //Deserealiza xml a objeto
                     object _item = serializer.Deserialize(strWriter);
                     ((Books)_item).XMLFormat = strXML;
                     retvalue =(Books)_item;
